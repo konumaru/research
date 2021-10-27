@@ -1,14 +1,8 @@
+build:
+	docker build --no-cache -t python-exp .
+
+rebuild:
+	sudo docker build --no-cache -t python-exp .
+
 run:
-	docker-compose up
-
-exec:
-	docker-compose exec python3 bash
-
-stop:
-	docker-compose stop python3
-
-rm-container:
-	docker-compose rm python3
-
-re-build:
-	docker-compose build --no-cache
+	sudo docker run -it --rm -p 127.0.0.0:8888:8888 -v ${PWD}:/workspace python-exp /bin/bash
