@@ -2,9 +2,6 @@ DOCKER_IMAGE_NAME := $(lastword $(subst /, ,$(CURDIR)))
 DOCKER_CONTAINER_NAME := $(lastword $(subst /, ,$(CURDIR)))_vm
 
 build:
-	docker build --no-cache -t $(DOCKER_IMAGE_NAME) .
-
-rebuild:
 	sudo docker build --no-cache -t $(DOCKER_IMAGE_NAME) .
 
 run:
