@@ -24,6 +24,9 @@ RUN echo "c.NotebookApp.notebook_dir = '/workspace'" >> /root/.jupyter/jupyter_n
 RUN echo "c.NotebookApp.open_browser = False" >> /root/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.token = ''" >> /root/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.password = ''" >> /root/.jupyter/jupyter_notebook_config.py
+# Setting jupyter code formatter
+RUN mkdir -p /root/.jupyter/lab/user-settings/@ryantam626/jupyterlab_code_formatter/
+RUN echo "{'formatOnSave': true,}" >> /root/.jupyter/lab/user-settings/@ryantam626/jupyterlab_code_formatter/settings.jupyterlab-settings
 
 RUN echo "source /etc/bash_completion" >> ~/.bashrc
 

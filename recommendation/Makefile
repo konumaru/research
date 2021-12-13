@@ -16,5 +16,5 @@ run:
 exec:
 	docker exec -it $(DOCKER_CONTAINER_NAME) /bin/bash
 
-jupyterlab:
+jupyter:
 	jupyter lab --allow-root --no-browser --port 10000
