@@ -43,6 +43,15 @@ RUN cat <<'EOF' > /root/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extensi
     ]
 }
 EOF
+RUN cat <<'EOF' > /root/.jupyter/nbconfig
+{
+    "codeCellConfig": {
+        "lineNumbers": true,
+    }
+}
+EOF
+
+
 
 RUN echo "source /etc/bash_completion" >> ~/.bashrc
 
