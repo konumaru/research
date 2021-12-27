@@ -1,5 +1,6 @@
-DOCKER_IMAGE_NAME := research-$(lastword $(subst /, ,$(CURDIR)))
-DOCKER_CONTAINER_NAME := $(lastword $(subst /, ,$(CURDIR)))-vm
+DIR_NAME := $(lastword $(subst /, ,$(CURDIR)))
+DOCKER_IMAGE_NAME := research-$(DIR_NAME)
+DOCKER_CONTAINER_NAME := $(DIR_NAME)-vm
 
 build:
 	sudo docker build --no-cache -t $(DOCKER_IMAGE_NAME) .
